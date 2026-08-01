@@ -20,6 +20,13 @@
     <project path="hardware/oplus" name="hardware_oplus" remote="alpha" revision="alpha-16.2-astonc" />
     <project path="hardware/pixelworks/interfaces" name="hardware_pixelworks_interfaces" remote="alpha" revision="alpha-16.2" />
 
+    <!-- display HAL: astonc has the Pixelworks Iris 7P chip, aston does not, so the
+         Iris/MEMC work lives on its own branch. Four projects share the name
+         hardware_qcom_display (sm8150/sm8350/sm8550/sm8750), so this has to be
+         removed by path or it would take the other three with it. -->
+    <remove-project name="hardware_qcom_display" path="hardware/qcom-caf/sm8550/display" />
+    <project path="hardware/qcom-caf/sm8550/display" name="hardware_qcom_display" remote="alpha" revision="alpha-16.2-caf-sm8550-astonc" groups="qcom" />
+
     <!-- kernel -->
     <project path="kernel/oneplus/sm8550" name="kernel_oneplus_sm8550" remote="alpha-devices" revision="alpha-16.2-ksu" />
     <project path="kernel/oneplus/sm8550-modules" name="kernel_oneplus_sm8550-modules" remote="alpha-devices" revision="alpha-16.2" />

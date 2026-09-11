@@ -18,7 +18,6 @@
 
     <!-- hardware -->
     <project path="hardware/oplus" name="hardware_oplus" remote="alpha" revision="alpha-16.2-astonc" />
-    <project path="hardware/pixelworks/interfaces" name="hardware_pixelworks_interfaces" remote="alpha" revision="alpha-16.2" />
 
     <!-- display HAL: astonc has the Pixelworks Iris 7P chip, aston does not, so the
          Iris/MEMC work lives on its own branch. Four projects share the name

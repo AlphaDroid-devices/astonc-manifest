@@ -4,14 +4,14 @@
 - refer to [AOSP](https://source.android.com/docs/setup/start/requirements)
 
 ## Build
-1. Initialise repo with [AlphaDroid](https://github.com/AlphaDroid-Project/manifest/tree/alpha-16.2) source code.
+1. Initialise repo with [AlphaDroid](https://github.com/AlphaDroid-Project/manifest/tree/alpha-17.0) source code.
     ```
-    repo init -u https://github.com/alphadroid-project/manifest.git -b alpha-16.2 --git-lfs
+    repo init -u https://github.com/alphadroid-project/manifest.git -b alpha-17.0 --git-lfs
     ```
 
-2. Download [aston manifest](https://github.com/AlphaDroid-devices/astonc-manifest/blob/alpha-16.2/local_manifest.xml) by cloning this repo
+2. Download [aston manifest](https://github.com/AlphaDroid-devices/astonc-manifest/blob/alpha-17.0/local_manifest.xml) by cloning this repo
     ```
-    git clone https://github.com/alphadroid-devices/astonc-manifest -b alpha-16.2 .repo/local_manifests
+    git clone https://github.com/alphadroid-devices/astonc-manifest -b alpha-17.0 .repo/local_manifests
     ```
 
 3. Sync

@@ -14,19 +14,20 @@
     <!-- ===================== platform splits =====================
          Device work lives on alpha-17.0-aston, on top of the global alpha-17.0,
          and both OnePlus devices build it (astonc adds nothing platform-side).
-         frameworks/base and vendor/alpha have local alpha-17.0-aston branches
-         since 2026-09-19; frameworks/av, frameworks/native and vendor/addons are
-         still LOS on A17. Re-enable each pin once its branch is pushed — not
-         before, or repo sync fails.
+         frameworks/av carries the OPlus camera work there. -->
 
     <remove-project name="frameworks_av" />
     <project path="frameworks/av" name="frameworks_av" remote="alpha-gitlab" revision="alpha-17.0-aston" groups="pdk,sysui-studio" />
 
-    <remove-project name="frameworks_base" />
-    <project path="frameworks/base" name="frameworks_base" remote="alpha-gitlab" revision="alpha-17.0-aston" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
-
     <remove-project name="frameworks_native" />
     <project path="frameworks/native" name="frameworks_native" remote="alpha-gitlab" revision="alpha-17.0-aston" groups="pdk" />
+
+    <!-- frameworks/base and vendor/alpha have local alpha-17.0-aston branches
+         since 2026-09-19; vendor/addons is still LOS on A17. Re-enable each pin
+         once its branch is pushed — not before, or repo sync fails.
+
+    <remove-project name="frameworks_base" />
+    <project path="frameworks/base" name="frameworks_base" remote="alpha-gitlab" revision="alpha-17.0-aston" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
 
     <remove-project name="vendor_alpha" />
     <project path="vendor/alpha" name="vendor_alpha" remote="alpha-gitlab" revision="alpha-17.0-aston" />

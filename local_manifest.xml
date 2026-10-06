@@ -7,9 +7,17 @@
              sync-j="4"
              revision="refs/heads/alpha-17.0" />-->
 
-    <!-- ===================== device ===================== -->
-    <project path="device/oneplus/astonc" name="device_oneplus_astonc" remote="alpha-devices" revision="alpha-17.0" />
-    <project path="device/oneplus/sm8550-common" name="device_oneplus_sm8550-common" remote="alpha-devices" revision="alpha-17.0" />
+    <!-- ===================== device =====================
+         The two OnePlus device trees are private and live on a personal
+         remote, not alphadroid-devices. Their alphadroid-devices copies exist
+         but trail this work, so do not measure "unpushed" against them.
+         A sync needs GitHub credentials that can read private repos. -->
+    <remote name="elpaablo"
+            fetch="https://github.com/elpaablo/"
+            revision="refs/heads/alpha-17.0" />
+
+    <project path="device/oneplus/astonc" name="device_oneplus_astonc" remote="elpaablo" revision="alpha-17.0" />
+    <project path="device/oneplus/sm8550-common" name="device_oneplus_sm8550-common" remote="elpaablo" revision="alpha-17.0" />
 
     <!-- ===================== platform splits =====================
          Device work lives on alpha-17.0-aston, on top of the global alpha-17.0,

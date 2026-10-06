@@ -50,9 +50,7 @@
          branch corrupted aston's display at unlock (A16, 2026-08-01). aston takes
          hardware/oplus alpha-17.0 and the LOS display HAL (alpha-17.0-caf-sm8550
          is LOS as-is). The display HAL removal must be by path: four projects
-         share the name hardware_qcom_display.
-         Both astonc branches are local until pushed; repo sync fails on them
-         until then, which beats silently dropping the MEMC commits. -->
+         share the name hardware_qcom_display. -->
 
     <project path="hardware/oplus" name="hardware_oplus" remote="alpha-gitlab" revision="alpha-17.0-astonc" />
 
@@ -73,18 +71,22 @@
     <project path="vendor/oneplus/astonc" name="vendor_oneplus_astonc" remote="alpha-gitlab" revision="alpha-17.0" />
     <project path="vendor/oneplus/sm8550-common" name="vendor_oneplus_sm8550-common" remote="alpha-gitlab" revision="alpha-17.0" />
 
+    <!-- ===================== camera =====================
+         The OPlus camera and gallery port. astonc device.mk inherits
+         camera-vendor.mk outright, so the tree must be here. Its A17 branch
+         stays on the private vendor_oplus_camera_17, with the full A16 history
+         and every LFS blob, until it goes public on vendor_oplus_camera. -->
+    <project path="vendor/oplus/camera" name="vendor_oplus_camera_17" remote="alpha-gitlab" revision="alpha-17.0" />
+
     <!-- ===================== accessories =====================
          Not ported to A17. fusion is the content-immune ALS ext-port and is the
          highest-risk device item on the rebase — it binds to libsensorservice
          internals. Note astonc device.mk must use inherit-product (not
          -if-exists) for fusion, or a missing tree ships silently.
-         vendor/oplus/camera is deliberately in no manifest on A16; it stays
-         optional and is listed here only so it is not forgotten.
 
     <project path="vendor/oneplus/fusion" name="vendor_oneplus_fusion" remote="alpha-gitlab" revision="alpha-17.0" />
     <project path="vendor/oneplus/dolby" name="vendor_oneplus_dolby" remote="alpha-gitlab" revision="alpha-17.0" />
     <project path="vendor/oneplus/ir" name="vendor_oneplus_ir" remote="alpha-gitlab" revision="alpha-17.0" />
-    <project path="vendor/oplus/camera" name="vendor_oplus_camera" remote="alpha-gitlab" revision="alpha-17.0" />
     -->
 
 </manifest>

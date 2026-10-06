@@ -30,12 +30,12 @@
     <remove-project name="frameworks_native" />
     <project path="frameworks/native" name="frameworks_native" remote="alpha-gitlab" revision="alpha-17.0-aston" groups="pdk" />
 
-    <!-- frameworks/base and vendor/alpha have local alpha-17.0-aston branches
-         since 2026-09-19; vendor/addons is still LOS on A17. Re-enable each pin
-         once its branch is pushed — not before, or repo sync fails.
-
     <remove-project name="frameworks_base" />
     <project path="frameworks/base" name="frameworks_base" remote="alpha-gitlab" revision="alpha-17.0-aston" groups="pdk-cw-fs,pdk-fs,sysui-studio" />
+
+    <!-- vendor/alpha has no device commits: its alpha-17.0-aston equals
+         alpha-17.0. vendor/addons is still LOS on A17. Pin either once it
+         carries device work and its branch is pushed, or repo sync fails.
 
     <remove-project name="vendor_alpha" />
     <project path="vendor/alpha" name="vendor_alpha" remote="alpha-gitlab" revision="alpha-17.0-aston" />
